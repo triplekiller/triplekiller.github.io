@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ethan&#39;s Blog</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://triplekiller.github.io/"/>
+  <updated>2017-06-22T08:36:22.924Z</updated>
+  <id>http://triplekiller.github.io/</id>
+  
+  <author>
+    <name>Ethan X</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Zombie</title>
+    <link href="http://triplekiller.github.io/2017/04/16/linux-zombie/"/>
+    <id>http://triplekiller.github.io/2017/04/16/linux-zombie/</id>
+    <published>2017-04-16T14:34:59.000Z</published>
+    <updated>2017-06-22T08:36:22.924Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="僵尸进程：defunt-zombie"><a href="#僵尸进程：defunt-zombie" class="headerlink" title="僵尸进程：defunt/zombie"></a>僵尸进程：defunt/zombie</h3><ul>
+<li>一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程</li>
+<li>子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸</li>
+<li>在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没有显式忽略该信号，则子进程成为僵尸进程，无法正常结束，此时即使是root身份kill -9也不能杀死僵尸进程。补救办法是杀死僵尸进程的父进程(僵尸进程的父进程必然存在)，僵尸进程成为”孤儿进程”，过继给1号进程init，init始终会负责清理僵尸进程</li>
+<li>系统调用exit，它的作用是使进程退出，但也仅仅限于将一个正常的进程变成一个僵尸进程，并不能将其完全销毁</li>
+<li>一个进程在调用exit命令结束自己的生命的时候，其实它并没有真正的被销毁，而是留下一个称为僵尸进程（Zombie）的数据结构</li>
+<li>僵尸进程已经放弃了几乎所有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集</li>
+<li>如果父进程是一个循环，不会结束，那么子进程就会一直保持僵尸状态</li>
+</ul>
+<h3 id="避免僵尸进程"><a href="#避免僵尸进程" class="headerlink" title="避免僵尸进程"></a>避免僵尸进程</h3><ul>
+<li>调用signal函数忽略SIGCHLD软中断  signal(SIGCHLD, SIG_IGN);</li>
+<li>调用wait/waitpid接管SIGCHLD信号，等待子进程返回 while (pid != waitpid(pid, NULL, WNOHANG));</li>
+<li>fork两次，子进程先退出，孙子进程就被init接管了，实际上与最初的父进程脱离了关系，就不会僵死了</li>
+</ul>
+<h3 id="僵尸进程危害"><a href="#僵尸进程危害" class="headerlink" title="僵尸进程危害"></a>僵尸进程危害</h3><ul>
+<li>Linux有最大进程数量限制，可用“ulimit -u”查看最大用户进程数，默认为32768（cat  /proc/sys/kernel/pid_max）</li>
+<li>产生过多的zombie进程会导致新进程无法生存</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;僵尸进程：defunt-zombie&quot;&gt;&lt;a href=&quot;#僵尸进程：defunt-zombie&quot; class=&quot;headerlink&quot; title=&quot;僵尸进程：defunt/zombie&quot;&gt;&lt;/a&gt;僵尸进程：defunt/zombie&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="Tech" scheme="http://triplekiller.github.io/categories/Tech/"/>
+    
+    
+      <category term="process" scheme="http://triplekiller.github.io/tags/process/"/>
+    
+  </entry>
+  
+</feed>
