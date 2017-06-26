@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://bit2tib.com/2017/04/16/linux-zombie/index.html">
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
-<meta property="og:updated_time" content="2017-06-26T06:57:01.239Z">
+<meta property="og:updated_time" content="2017-06-26T07:12:30.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
@@ -223,7 +223,7 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-06-26T06:57:01.239Z" itemprop="dateUpdated">2017-06-26 14:57:01</time>
+    Last updated: <time datetime="2017-06-26T07:12:30.269Z" itemprop="dateUpdated">2017-06-26 15:12:30</time>
 </span><br>
 
 
@@ -328,8 +328,8 @@ WNOHANG))</li>
             owner: 'triplekiller',
             repo: 'triplekiller.github.io',
             oauth: {
-                client_id: '063d33196500ebc3fc5d',
-                client_secret: 'b6dbbd1714b9df1e618bfcb58a1877f3645f398c',
+                client_id: '23da5979aabea596963f',
+                client_secret: '66f9fdcfc6f2ff4bebc6f7f745aac477050f774c',
             },
         })
         gitment.render('comments')
