@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://bit2tib.com/2017/04/16/linux-zombie/index.html">
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
-<meta property="og:updated_time" content="2017-06-26T06:15:47.325Z">
+<meta property="og:updated_time" content="2017-06-26T06:57:01.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
@@ -223,12 +223,12 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-06-26T06:15:47.325Z" itemprop="dateUpdated">2017-06-26 14:15:47</time>
+    Last updated: <time datetime="2017-06-26T06:57:01.239Z" itemprop="dateUpdated">2017-06-26 14:57:01</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://bit2tib.com/2017/04/16/linux-zombie/</a>
+        <a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://bit2tib.com/2017/04/16/linux-zombie/</a>
         
     </div>
     <footer>
