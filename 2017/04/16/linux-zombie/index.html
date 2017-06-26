@@ -24,10 +24,10 @@
 <meta name="keywords" content="process">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux Zombie">
-<meta property="og:url" content="http://triplekiller.github.io/2017/04/16/linux-zombie/index.html">
+<meta property="og:url" content="http://bit2tib.com/2017/04/16/linux-zombie/index.html">
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
-<meta property="og:updated_time" content="2017-06-26T03:06:56.424Z">
+<meta property="og:updated_time" content="2017-06-26T06:15:47.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
@@ -223,16 +223,16 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-06-26T03:06:56.424Z" itemprop="dateUpdated">2017-06-26 11:06:56</time>
+    Last updated: <time datetime="2017-06-26T06:15:47.325Z" itemprop="dateUpdated">2017-06-26 14:15:47</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://triplekiller.github.io/2017/04/16/linux-zombie/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://bit2tib.com/2017/04/16/linux-zombie/</a>
         
     </div>
     <footer>
-        <a href="http://triplekiller.github.io">
+        <a href="http://bit2tib.com">
             <img src="/img/avatar.jpg" alt="Ethan X">
             Ethan X
         </a>
@@ -258,7 +258,7 @@ WNOHANG))</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://triplekiller.github.io/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&pic=http://triplekiller.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -268,22 +268,22 @@ WNOHANG))</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://triplekiller.github.io/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&source=Keep thinking and keep moving" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://triplekiller.github.io/2017/04/16/linux-zombie/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — Ethan's Blog&url=http://triplekiller.github.io/2017/04/16/linux-zombie/&via=http://triplekiller.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — Ethan's Blog&url=http://bit2tib.com/2017/04/16/linux-zombie/&via=http://bit2tib.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://triplekiller.github.io/2017/04/16/linux-zombie/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -406,7 +406,7 @@ WNOHANG))</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://triplekiller.github.io/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&pic=http://triplekiller.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -416,22 +416,22 @@ WNOHANG))</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://triplekiller.github.io/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — Ethan's Blog&source=Keep thinking and keep moving" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://triplekiller.github.io/2017/04/16/linux-zombie/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — Ethan's Blog&url=http://triplekiller.github.io/2017/04/16/linux-zombie/&via=http://triplekiller.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — Ethan's Blog&url=http://bit2tib.com/2017/04/16/linux-zombie/&via=http://bit2tib.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://triplekiller.github.io/2017/04/16/linux-zombie/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -442,7 +442,7 @@ WNOHANG))</li>
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3awY6DMAxFUf7/p+l2pBHlPjtUwrlZVS0NnC5cx/Zx4HVerL+fkiuvdv7/3eOJJUOGjNcyzq/r6hp+Y0Li973cR4YMGRswSCi8uvH39ztU8mwyZMiQUbumH1hlyJAhY1XAreF5EJchQ4aM9BCbkkhQrhXvZMiQsRuDV91///qR/oYMGTJexTjD1Sm91doD6KlkyJAxmsEDHE/IeEgNDqjkeWTIkDGU0S/3dw66nVDeqhfKkCHjtQwSEPnYVq15WSvDyZAhYzaDPyJ/IHJljRc3MmXIkDGC0Q+XvEzW2e3mUxkyZIxm8J5gbfCLHJXJbq3RChkyZLycsWroig9ypUdW9CPKkCFjA0YacDtjZLzBUKwaypAhYxwjTdHS9kCthVAs3smQIWM04+kmZdoMWHAWlyFDxiAGSdpqVJ7w1YbGbjJcGTJkjGPwMJqSahGSh2AZMmTsw+ikgGuPuOn+MmTI2IFBtiBHTZ7wpelggJQhQ8aWDF6a5w1LUlDj+6OAK0OGjHEMHuBIKpkG61ohT4YMGbsx0rJ+J9TG/dX0f0OGDBkjGGe4CInskIbyG7YMGTJGM2rjYp0WAk86+R+ADBkydmCkLcZVgZsfa1HZToYMGRsw+KmXI1vlM/yTyZAhQ0bQRAQ3TsfLgvKcDBkyZCxNE4MwiofVZMiQsQMjbQakw1s1QDACIkOGjNGM2ohDfyxj8cyIDBkyZjI+rfoZBi2qvUEAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aS27bQBAFQN3/0gqQrUDlvZ5xYA5rVgQtiCwt2v17veLz/ns+r9s7n/c//3r1mQ0HAwPjtoz31/P9M/n3JOfqJ0uejoGB8QRGHmRbcP6UJLhf3sfAwMAoE7uVUIuBgYGxzpi9RH6NgYGBsVLEJvikidYyNtfiGBgYN2SsDAZ++vo/zTcwMDB+MWNX8VmncV8L4/odMDAwjmYkxWqeDs5GoW2CGNXiGBgYBzHa1YrZqsTeJbOoCsfAwDiIMUvp8jFnEr7z1HDDfAMDA+OGjNmwME/sZsOAuvTFwMA4mpEHuLaUXRkDtA04DAyMsxl5aywvL2dFb54I1qEWAwPjOMY/0q+gNJ218/JQOxwMYGBg3JyxsvrQjkJXljYuvxkDA+MBjDZ05sF39tPUYRcDA+MBjNky1iy8tstnUdqKgYFxNGO9fd+2+PM1jnrAiYGB8RjG3rHB+hpHPiLFwMA4lfETyV8yVEiC7LAWx8DAOJTRDiCTBDFhzNpzxX8MDAyMIxhtItimkrPVihyMgYHxBEY7PszTuLaIzYPsZaMNAwPjUEabDq6/4vC1YjwGBsZ5jHd52vi2HmqjFQ0MDIyjGbMwt9LW31swY2BgPIeRBNm20F1v+rd4DAyMJzCSBC5v5bfrGnkox8DAwJi9RFKIzgacdWqIgYHxeEa7pJWvZbTB/dU+DAMD4whGGxZ3nXzkuTTlwMDAuDljtuKwK71rW3XbRpgYGBj3YPwBrs4AZdavaxcAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
