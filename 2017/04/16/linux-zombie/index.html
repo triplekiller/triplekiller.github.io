@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://bit2tib.com/2017/04/16/linux-zombie/index.html">
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
-<meta property="og:updated_time" content="2017-06-26T07:12:30.269Z">
+<meta property="og:updated_time" content="2017-06-26T08:17:29.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
@@ -223,7 +223,7 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-06-26T07:12:30.269Z" itemprop="dateUpdated">2017-06-26 15:12:30</time>
+    Last updated: <time datetime="2017-06-26T08:17:29.375Z" itemprop="dateUpdated">2017-06-26 16:17:29</time>
 </span><br>
 
 
@@ -486,23 +486,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-<script>
-(function() {
-    var OriginTitile = document.title, titleTime;
-    document.addEventListener('visibilitychange', function() {
-        if (document.hidden) {
-            document.title = '死鬼去哪里了！';
-            clearTimeout(titleTime);
-        } else {
-            document.title = '(つェ⊂)咦!又好了!';
-            titleTime = setTimeout(function() {
-                document.title = OriginTitile;
-            },2000);
-        }
-    });
-})();
-</script>
 
 
 

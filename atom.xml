@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bit2tib.com/"/>
-  <updated>2017-06-26T07:12:30.269Z</updated>
+  <updated>2017-06-26T08:17:29.375Z</updated>
   <id>http://bit2tib.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://bit2tib.com/2017/04/16/linux-zombie/"/>
     <id>http://bit2tib.com/2017/04/16/linux-zombie/</id>
     <published>2017-04-16T14:34:59.000Z</published>
-    <updated>2017-06-26T07:12:30.269Z</updated>
+    <updated>2017-06-26T08:17:29.375Z</updated>
     
     <content type="html"><![CDATA[<h3 id="僵尸进程：defunt-zombie"><a href="#僵尸进程：defunt-zombie" class="headerlink" title="僵尸进程：defunt/zombie"></a>僵尸进程：defunt/zombie</h3><ul>
 <li>一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它
