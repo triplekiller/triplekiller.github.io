@@ -183,9 +183,12 @@
 
     
         僵尸进程：defunt/zombie
-一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程
-子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸
-在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束...
+一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它
+仍占用的资源）的进程
+子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子
+进程收尸
+在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装
+SIGCHLD信号处理函数调用waitpid()等待子进...
     
 
         <a href="/2017/04/16/linux-zombie/" class="post-more waves-effect waves-button">
