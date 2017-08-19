@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-18T09:03:51.668Z">
+<meta property="og:updated_time" content="2017-08-19T01:22:21.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它 仍占用的资源）的进程 子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子 进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装 SIGCHLD信号处理函数调用waitpid()等待子进程结束">
@@ -36,7 +36,7 @@
         <link rel="alternate" type="application/atom+xml" title="Ethan&#39;s Blog" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.13">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -222,7 +222,7 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2017-08-18T09:03:51.668Z" itemprop="dateUpdated">2017-08-18 17:03:51</time>
+    Last updated: <time datetime="2017-08-19T01:22:21.079Z" itemprop="dateUpdated">2017-08-19 09:22:21</time>
 </span><br>
 
 
@@ -451,7 +451,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+<script src="/js/main.min.js?v=1.6.13"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -471,7 +471,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+<script src="/js/search.min.js?v=1.6.13" async></script>
 
 
 
