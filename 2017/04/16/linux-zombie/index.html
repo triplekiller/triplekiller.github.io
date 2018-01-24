@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="Ethan&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-23T14:31:10.715Z">
+<meta property="og:updated_time" content="2018-01-24T07:20:52.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
@@ -36,7 +36,7 @@
         <link rel="alternate" type="application/atom+xml" title="Ethan&#39;s Blog" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.6.13">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -164,12 +164,13 @@
 <div class="container body-wrap">
     
     <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#僵尸进程：defunt-zombie"><span class="post-toc-number">1.</span> <span class="post-toc-text">僵尸进程：defunt/zombie</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#避免僵尸进程"><span class="post-toc-number">2.</span> <span class="post-toc-text">避免僵尸进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#僵尸进程危害"><span class="post-toc-number">3.</span> <span class="post-toc-text">僵尸进程危害</span></a></li></ol>
         </nav>
     </aside>
-    
+
+
 <article id="post-linux-zombie"
   class="post-article article-type-post fade" itemprop="blogPost">
 
@@ -207,10 +208,11 @@ WNOHANG))</li>
         </div>
 
         <blockquote class="post-copyright">
+    
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-01-23T14:31:10.715Z" itemprop="dateUpdated">2018-01-23 22:31:10</time>
+    Last updated: <time datetime="2018-01-24T07:20:52.654Z" itemprop="dateUpdated">2018-01-24 15:20:52</time>
 </span><br>
 
 
@@ -218,6 +220,7 @@ WNOHANG))</li>
         <a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://bit2tib.com/2017/04/16/linux-zombie/</a>
         
     </div>
+    
     <footer>
         <a href="http://bit2tib.com">
             <img src="/img/avatar.jpg" alt="Ethan X">
@@ -314,9 +317,6 @@ WNOHANG))</li>
 
 
 
-
-
-
 <section class="comments" id="comments">
     <div id="gitment_thread"></div>
     <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
@@ -333,6 +333,9 @@ WNOHANG))</li>
         gitment.render('comments')
     </script>
 </section>
+
+
+
 
 
 
@@ -385,11 +388,14 @@ WNOHANG))</li>
     </div>
     <div class="bottom">
         <p>
-            <span>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-            Theme <a href="https://github.com/yscoder/hexo-theme-indigo"
-            target="_blank">indigo</a> | Hosted by <a href="https://pages.coding.me"
-            target="_blank">Coding Pages</a> & <a href="https://pages.github.com/"
-            target="_blank">GitHub Pages</span>
+            <span>
+                
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo"
+                target="_blank">indigo</a> | Hosted by <a href="https://pages.coding.me"
+                target="_blank">Coding Pages</a> & <a href="https://pages.github.com/"
+                target="_blank">GitHub Pages
+            </span>
         </p>
     </div>
 </footer>
@@ -452,7 +458,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 
 </script>
 
-<script src="/js/main.min.js?v=1.6.13"></script>
+<script src="/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -472,7 +478,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.6.13" async></script>
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
