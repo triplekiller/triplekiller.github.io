@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Setup HLS Server Using Nginx | EthanX&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="HLS,nginx">
+    <meta name="description" content="为了学习HLS，首先在Ubuntu 14.04 x86_64平台上用Nginx搭一个HLS Streaming Server玩一玩，具体步骤如下： Install Nginx with RTMP support 下载Nginx及nginx-rtmp-module  $ mkdir ~/hls$ cd ~/hls$ git clone https://github.com/arut/nginx-rt">
+<meta name="keywords" content="HLS,nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setup HLS Server Using Nginx">
+<meta property="og:url" content="http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/index.html">
+<meta property="og:site_name" content="EthanX&#39;s Blog">
+<meta property="og:description" content="为了学习HLS，首先在Ubuntu 14.04 x86_64平台上用Nginx搭一个HLS Streaming Server玩一玩，具体步骤如下： Install Nginx with RTMP support 下载Nginx及nginx-rtmp-module  $ mkdir ~/hls$ cd ~/hls$ git clone https://github.com/arut/nginx-rt">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-05T07:45:26.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Setup HLS Server Using Nginx">
+<meta name="twitter:description" content="为了学习HLS，首先在Ubuntu 14.04 x86_64平台上用Nginx搭一个HLS Streaming Server玩一玩，具体步骤如下： Install Nginx with RTMP support 下载Nginx及nginx-rtmp-module  $ mkdir ~/hls$ cd ~/hls$ git clone https://github.com/arut/nginx-rt">
+    
+        <link rel="alternate" type="application/atom+xml" title="EthanX&#39;s Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Ethan X</h5>
+          <a href="mailto:sanhust@gmail.com" title="sanhust@gmail.com" class="mail">sanhust@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/triplekiller" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                About
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Setup HLS Server Using Nginx</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Setup HLS Server Using Nginx</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-02T06:00:57.000Z" itemprop="datePublished" class="page-time">
+  2018-03-02
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Multimedia/">Multimedia</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Install-Nginx-with-RTMP-support"><span class="post-toc-number">1.</span> <span class="post-toc-text">Install Nginx with RTMP support</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Config-Nginx-with-RTMP"><span class="post-toc-number">2.</span> <span class="post-toc-text">Config Nginx with RTMP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Push-live-stream-to-Nginx"><span class="post-toc-number">3.</span> <span class="post-toc-text">Push live stream to Nginx</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference-links"><span class="post-toc-number">4.</span> <span class="post-toc-text">Reference links</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-setup-hls-server-using-nginx"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Setup HLS Server Using Nginx</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-03-02 14:00:57" datetime="2018-03-02T06:00:57.000Z"  itemprop="datePublished">2018-03-02</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Multimedia/">Multimedia</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>为了学习HLS，首先在Ubuntu 14.04 x86_64平台上用Nginx搭一个HLS Streaming Server玩一玩，具体步骤如下：</p>
+<h3 id="Install-Nginx-with-RTMP-support"><a href="#Install-Nginx-with-RTMP-support" class="headerlink" title="Install Nginx with RTMP support"></a>Install Nginx with RTMP support</h3><ul>
+<li>下载Nginx及nginx-rtmp-module</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir ~/hls</span><br><span class="line">$ <span class="built_in">cd</span> ~/hls</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/arut/nginx-rtmp-module</span><br><span class="line"><span class="comment"># Download related version of nginx</span></span><br><span class="line">$ wget http://nginx.org/download/nginx-1.12.2.tar.gz</span><br></pre></td></tr></table></figure>
+<ul>
+<li>编译安装Nginx</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Install nginx dependencies</span></span><br><span class="line">$ sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev</span><br><span class="line">$ tar xf nginx-1.12.2.tar.gz</span><br><span class="line">$ <span class="built_in">cd</span> nginx-1.12.2</span><br><span class="line">$ ./configure --with-http_ssl_module --with-http_stub_status_module \</span><br><span class="line">--add-module=../nginx-rtmp-module</span><br><span class="line">$ make -j4</span><br><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安装Nginx init脚本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/JasonGiedymin/nginx-init-ubuntu.git</span><br><span class="line">$ sudo cp nginx-init-ubuntu/nginx /etc/init.d/nginx</span><br><span class="line">$ sudo chmod +x /etc/init.d/nginx</span><br><span class="line">$ sudo update-rc.d nginx defaults</span><br><span class="line">$ sudo service nginx start</span><br></pre></td></tr></table></figure>
+<h3 id="Config-Nginx-with-RTMP"><a href="#Config-Nginx-with-RTMP" class="headerlink" title="Config Nginx with RTMP"></a>Config Nginx with RTMP</h3><p>根据<a href="https://github.com/arut/nginx-rtmp-module/wiki/Getting-started-with-nginx-rtmp" target="_blank" rel="noopener">nginx-rtmp-module的Wiki</a>配置RTMP，修改nginx.conf如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--- /usr/local/nginx/conf/nginx.conf.default	2018-03-01 10:38:34.726129303 +0800</span><br><span class="line">+++ /usr/local/nginx/conf/nginx.conf	2018-03-05 12:20:56.532758031 +0800</span><br><span class="line">@@ -1,6 +1,6 @@</span><br><span class="line"></span><br><span class="line"> #user  nobody;</span><br><span class="line">-worker_processes  1;</span><br><span class="line">+worker_processes  auto;</span><br><span class="line"></span><br><span class="line"> #error_log  logs/error.log;</span><br><span class="line"> #error_log  logs/error.log  notice;</span><br><span class="line">@@ -92,6 +92,39 @@</span><br><span class="line">     #    &#125;</span><br><span class="line">     #&#125;</span><br><span class="line"></span><br><span class="line">+    server &#123;</span><br><span class="line">+        listen 8000;</span><br><span class="line">+        server_name localhost;</span><br><span class="line">+</span><br><span class="line">+        # rtmp stat</span><br><span class="line">+        location /stat &#123;</span><br><span class="line">+            rtmp_stat all;</span><br><span class="line">+            rtmp_stat_stylesheet stat.xsl;</span><br><span class="line">+        &#125;</span><br><span class="line">+</span><br><span class="line">+        location /stat.xsl &#123;</span><br><span class="line">+            # you can move stat.xsl to a different location</span><br><span class="line">+            root /tmp/hls;</span><br><span class="line">+        &#125;</span><br><span class="line">+</span><br><span class="line">+        # rtmp control</span><br><span class="line">+        location /control &#123;</span><br><span class="line">+            rtmp_control all;</span><br><span class="line">+        &#125;</span><br><span class="line">+</span><br><span class="line">+        location /hls &#123;</span><br><span class="line">+            types &#123;</span><br><span class="line">+                text/html html htm;</span><br><span class="line">+                application/dash+xml mpd;</span><br><span class="line">+                application/x-mpegurl m3u8;</span><br><span class="line">+                video/mp2t ts;</span><br><span class="line">+            &#125;</span><br><span class="line">+</span><br><span class="line">+            root /tmp;</span><br><span class="line">+            index index.html;</span><br><span class="line">+            expires -1;</span><br><span class="line">+        &#125;</span><br><span class="line">+    &#125;</span><br><span class="line"></span><br><span class="line">     # HTTPS server</span><br><span class="line">     #</span><br><span class="line">@@ -115,3 +148,21 @@</span><br><span class="line">     #&#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line">+</span><br><span class="line">+rtmp &#123;</span><br><span class="line">+    server &#123;</span><br><span class="line">+            listen 1935;</span><br><span class="line">+            chunk_size 4096;</span><br><span class="line">+</span><br><span class="line">+            application hls &#123;</span><br><span class="line">+                live on;</span><br><span class="line">+                # Turn on HLS</span><br><span class="line">+                hls on;</span><br><span class="line">+                hls_path /tmp/hls;</span><br><span class="line">+                hls_fragment 5;</span><br><span class="line">+                # hls_playlist_length 60;</span><br><span class="line">+                # Disable consuming the stream from nginx as rtmp</span><br><span class="line">+                # deny play all;</span><br><span class="line">+            &#125;</span><br><span class="line">+    &#125;</span><br><span class="line">+&#125;</span><br></pre></td></tr></table></figure>
+<p>写到这里，插一个题外话，vim打开nginx.conf，需要拷贝nginx.conf.diff的内容到Markdown编辑器atom，这里就涉及到vim如何与系统剪贴板交互，搜索一番后结果如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check if vim installed supports system clipboard</span></span><br><span class="line">$ vim --version | grep clipboard</span><br><span class="line"><span class="comment"># If displayed as "-clipboard" then install vim-gtk</span></span><br><span class="line">$ sudo apt-get install vim-gtk</span><br><span class="line"><span class="comment"># "+y for yank to the clipboard register</span></span><br><span class="line"><span class="comment"># "+p for paste from the clipboard register</span></span><br><span class="line"><span class="comment"># :help clipboard for more information</span></span><br></pre></td></tr></table></figure>
+<p>修改完成后，执行命令<code>sudo service nginx reload</code>重新加载nginx.conf文件。</p>
+<h3 id="Push-live-stream-to-Nginx"><a href="#Push-live-stream-to-Nginx" class="headerlink" title="Push live stream to Nginx"></a>Push live stream to Nginx</h3><p>Nginx将RTMP stream作为输入，对于HLS来说，video stream格式一般是x264，audio stream格式一般是AAC。RTMP stream通过ffmpeg来提供。</p>
+<ul>
+<li>安装ffmpeg</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Reinstall ffmpeg from another PPA</span><br><span class="line">$ sudo apt-get --purge remove ffmpeg</span><br><span class="line">$ sudo apt-get --purge autoremove</span><br><span class="line">$ sudo apt-get install ppa-purge</span><br><span class="line">$ sudo ppa-purge ppa:kirillshkrogalev/ffmpeg-next</span><br><span class="line"></span><br><span class="line"># -E enable root using common user&apos;s env setting</span><br><span class="line">$ sudo -E add-apt-repository ppa:mc3man/trusty-media</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get dist-upgrade</span><br><span class="line">$ sudo apt-get install ffmpeg</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ffmpeg提供RTMP stream</li>
+</ul>
+<p><code>$ ffmpeg -re -i big_buck_bunny_720p_h264.mov -c copy -f flv rtmp://localhost/hls/bbb</code></p>
+<p>RTMP的URI格式为：<code>rtmp://nginx_host:[:nginx_port]/app_name/stream_name</code>，按照nginx.conf的配置，这里可以通过vlc(vlc –no-overlay –no-video-on-top)或ffplay来播放测试的HLS stream，URI可以是RTMP或者HTTP格式：</p>
+<p><code>rtmp://localhost/hls/bbb</code></p>
+<p><code>http://localhost:8000/hls/bbb.m3u8</code></p>
+<p>另外，通过<code>http://localhost:8000/stat</code>可以查看RTMP stream的相关信息，需要拷贝nginx-rtmp-module目录下的stat.xsl到/tmp/hls目录下。</p>
+<h3 id="Reference-links"><a href="#Reference-links" class="headerlink" title="Reference links"></a>Reference links</h3><ul>
+<li><a href="https://docs.peer5.com/guides/setting-up-hls-live-streaming-server-using-nginx/" target="_blank" rel="noopener">Peer5 docs</a></li>
+<li><a href="https://www.vultr.com/docs/setup-nginx-on-ubuntu-to-stream-live-hls-video" target="_blank" rel="noopener">Vultr docs</a></li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-03-05T07:45:26.306Z" itemprop="dateUpdated">2018-03-05 15:45:26</time>
+</span><br>
+
+
+        
+        <a href="/2018/03/02/setup-hls-server-using-nginx/" target="_blank" rel="external">http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://bit2tib.com">
+            <img src="/img/avatar.jpg" alt="Ethan X">
+            Ethan X
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">Donate</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HLS/">HLS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&title=《Setup HLS Server Using Nginx》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title=" WeChat">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&title=《Setup HLS Server Using Nginx》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Setup HLS Server Using Nginx》 — EthanX's Blog&url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&via=http://bit2tib.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/24/update-hexo-theme/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Update Hexo Theme</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitment_thread"></div>
+    <link rel="stylesheet" href="//unpkg.com/gitment/style/default.css">
+    <script src="//unpkg.com/gitment/dist/gitment.browser.js"></script>
+    <script>
+        var gitment = new Gitment({
+            owner: 'triplekiller',
+            repo: 'triplekiller.github.io',
+            oauth: {
+                client_id: '23da5979aabea596963f',
+                client_secret: '66f9fdcfc6f2ff4bebc6f7f745aac477050f774c',
+            },
+        })
+        gitment.render('comments')
+    </script>
+</section>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        Thanks for donating
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.jpg" alt="DonateQRCode">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.jpg" data-alipay="/img/alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">WeChat</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">Alipay</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span>Ethan X &copy; 2017 - 2018</span>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>Licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC 4.0</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>
+                
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+                Theme <a href="https://github.com/yscoder/hexo-theme-indigo"
+                target="_blank">indigo</a> | Hosted by <a href="https://pages.coding.me"
+                target="_blank">Coding Pages</a> & <a href="https://pages.github.com/"
+                target="_blank">GitHub Pages</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&title=《Setup HLS Server Using Nginx》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title=" WeChat">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&title=《Setup HLS Server Using Nginx》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Setup HLS Server Using Nginx》 — EthanX's Blog&url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/&via=http://bit2tib.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2018/03/02/setup-hls-server-using-nginx/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>Scan to share with WeChat</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aQY7jMAwEwPn/p7PAXmftdIuawUYunQInsVk+EKTEr694vf6u75/bf7VXNi8MDIyPZbxuV/KA79fv73aPvL9+GQkGBsYDGG26XEvKV4Em376JGQMDA2MpXSa/TBI9BgYGxhqjLe/yV4OBgYExaWLzpHlfUObl4I/04hgYGB/ImBwM/PTnXzrfwMDA+I8Zr3K1JeD8sDOKCgMD42hGHlbe9Cahz8FRhYuBgXEEI9/8yoNrjyc3bMxhYGA8npH0jJOyb77xh4GBcTZjEnS7Wba2oVY0sRgYGIcyknGHXSNie9P3ZROLgYFxKKMtEJMHJ8Xf5FDz8nwDAwPjOMauom1+MNm2uP+IFgMD41BGvnG/VizmLyiHvWliMTAwjma0QxWTFJyXm9Hrw8DAeACjHYlok2wdVlsmYmBgPIDRpsVk5GvOKLbnMDAwHsPIE1/dZJbjFPWIGAYGxsMYeUrNBymSFrdtYt+cbGBgYBzEWGsj25GIfFAjSb6X98fAwDiUsVbYrbWya2k6ejoGBsbDGO1o11oQa2Xl5e8xMDCOZrRBTAYjJkm2HjXDwMA4iPEq19qxwdoYR/GaMDAwjmbkK//D3oGMdjgDAwPjVEaeZOepcNfhQVSxYmBgHMfIU+ck3EkTi4GBgZEfCbQ7eXuPOS/TMQYGBsZ486stN/MSFgMD4zmMvIltg5uk1DxCDAyMsxm7tvsXb10Oc4yegoGB8XmMP9sdZasMIkVqAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
