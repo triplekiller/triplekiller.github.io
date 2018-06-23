@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EthanX&#39;s Blog">
 <meta property="og:description" content="Hexo博客已经搭建完毕，但有时需要在不同的电脑上写博客，需要重新安装Hexo博客环境，具体步骤如下： Clone博客源码$ git clone https://github.com/triplekiller/hexo-blog.git$ cd hexo-blog$ git submodule update --init$ git config user.name &quot;Ethan Xia&quot;$ git">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-05T07:45:26.306Z">
+<meta property="og:updated_time" content="2018-06-23T05:30:56.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Start Writing Hexo Blog">
 <meta name="twitter:description" content="Hexo博客已经搭建完毕，但有时需要在不同的电脑上写博客，需要重新安装Hexo博客环境，具体步骤如下： Clone博客源码$ git clone https://github.com/triplekiller/hexo-blog.git$ cd hexo-blog$ git submodule update --init$ git config user.name &quot;Ethan Xia&quot;$ git">
@@ -166,7 +166,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Clone博客源码"><span class="post-toc-number">1.</span> <span class="post-toc-text">Clone博客源码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#本地预览"><span class="post-toc-number">3.</span> <span class="post-toc-text">本地预览</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#写博客"><span class="post-toc-number">4.</span> <span class="post-toc-text">写博客</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Clone博客源码"><span class="post-toc-number">1.</span> <span class="post-toc-text">Clone博客源码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Node-js"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Node.js</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用nvm安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用nvm安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用NodeSource的PPA源安装"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">使用NodeSource的PPA源安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#本地预览"><span class="post-toc-number">4.</span> <span class="post-toc-text">本地预览</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#写博客"><span class="post-toc-number">5.</span> <span class="post-toc-text">写博客</span></a></li></ol>
         </nav>
     </aside>
 
@@ -189,10 +189,23 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>Hexo博客已经搭建完毕，但有时需要在不同的电脑上写博客，需要重新安装Hexo博客环境，具体步骤如下：</p>
-<h3 id="Clone博客源码"><a href="#Clone博客源码" class="headerlink" title="Clone博客源码"></a>Clone博客源码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/triplekiller/hexo-blog.git</span><br><span class="line">$ <span class="built_in">cd</span> hexo-blog</span><br><span class="line">$ git submodule update --init</span><br><span class="line">$ git config user.name <span class="string">"Ethan Xia"</span></span><br><span class="line">$ git config user.email <span class="string">"sanhust@gmail.com"</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>根据<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a>，安装Hexo及其依赖的Node.js等环境。</p>
+<h2 id="Clone博客源码"><a href="#Clone博客源码" class="headerlink" title="Clone博客源码"></a>Clone博客源码</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/triplekiller/hexo-blog.git</span><br><span class="line">$ <span class="built_in">cd</span> hexo-blog</span><br><span class="line">$ git submodule update --init</span><br><span class="line">$ git config user.name <span class="string">"Ethan Xia"</span></span><br><span class="line">$ git config user.email <span class="string">"sanhust@gmail.com"</span></span><br></pre></td></tr></table></figure>
+<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h2><p>由于Ubuntu 16.04自带的nodejs版本太低(v4.6.2)，不推荐直接使用<code>sudo apt-get install -y nodejs</code>安装默认版本。可以使用以下两种方式进行安装。</p>
+<h3 id="使用nvm安装"><a href="#使用nvm安装" class="headerlink" title="使用nvm安装"></a>使用<a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>安装</h3><p>下载nvm到<code>~/.nvm</code></p>
+<p><code>$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</code></p>
+<p>添加环境变量到<code>~/.bashrc</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$HOME</span>/.nvm"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> <span class="comment"># This loads nvm</span></span><br><span class="line">[[ -r <span class="variable">$NVM_DIR</span>/bash_completion ]] &amp;&amp; \. <span class="variable">$NVM_DIR</span>/bash_completion</span><br></pre></td></tr></table></figure>
+<p>下载最新的release版本</p>
+<p><code>$ nvm install node</code></p>
+<p>添加npm bash completion功能</p>
+<p><code>$ npm i -g npm-completion</code></p>
+<p>查看npm配置属性</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm config get globalconfig</span><br><span class="line">$ npm config get userconfig</span><br><span class="line">$ npm config ls -l</span><br></pre></td></tr></table></figure>
+<h3 id="使用NodeSource的PPA源安装"><a href="#使用NodeSource的PPA源安装" class="headerlink" title="使用NodeSource的PPA源安装"></a>使用NodeSource的PPA源<a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_blank" rel="noopener">安装</a></h3><p>安装Node.js 10.x版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><p>根据<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">Hexo官方文档</a>，安装Hexo</p>
 <ul>
-<li>安装hexo-cli，安装路径在/usr/lib/node_modules/hexo-cli/中</li>
+<li>安装hexo-cli，Ubuntu下全局路径在/usr/local/lib/node_modules/hexo-cli/中</li>
 </ul>
 <p><code>$ npm install -g hexo-cli</code></p>
 <ul>
@@ -203,11 +216,11 @@
 <li>安装hexo-server（Hexo 3.0后hexo-server需要单独安装）</li>
 </ul>
 <p><code>$ npm install hexo-server --save</code></p>
-<h3 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h3><p>生成静态文件，路径在public目录中</p>
+<h2 id="本地预览"><a href="#本地预览" class="headerlink" title="本地预览"></a>本地预览</h2><p>生成静态文件，路径在public目录中</p>
 <p><code>$ hexo g</code></p>
-<p>启动服务器，默认访问地址为：<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
+<p>启动服务器，默认访问地址为<a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a></p>
 <p><code>$ hexo s</code></p>
-<h3 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h3><p><code>$ hexo new post start-writing-hexo-blog</code></p>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p><code>$ hexo new post start-writing-hexo-blog</code></p>
 
         </div>
 
@@ -216,7 +229,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-03-05T07:45:26.306Z" itemprop="dateUpdated">2018-03-05 15:45:26</time>
+    Last updated: <time datetime="2018-06-23T05:30:56.446Z" itemprop="dateUpdated">2018-06-23 13:30:56</time>
 </span><br>
 
 
