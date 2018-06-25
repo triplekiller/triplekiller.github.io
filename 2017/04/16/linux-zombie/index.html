@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EthanX&#39;s Blog">
 <meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-25T06:29:47.555Z">
+<meta property="og:updated_time" content="2018-06-25T06:56:25.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux Zombie">
 <meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
@@ -212,7 +212,7 @@ WNOHANG))</li>
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-25T06:29:47.555Z" itemprop="dateUpdated">2018-06-25 14:29:47</time>
+    Last updated: <time datetime="2018-06-25T06:56:25.183Z" itemprop="dateUpdated">2018-06-25 14:56:25</time>
 </span><br>
 
 

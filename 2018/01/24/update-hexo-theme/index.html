@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="EthanX&#39;s Blog">
 <meta property="og:description" content="热门的Hexo主题一般更新很快，我们可以定期将自己感兴趣的或者影响较大的patch合入到自己的主题仓库中，具体步骤如下： Sync a fork按照GitHub帮助文档，将自己的Hexo主题仓库的tracked分支更新到最新。 $ cd themes/indigo$ git remote add upstream https://github.com/yscoder/hexo-theme-indi">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-06-25T06:29:47.555Z">
+<meta property="og:updated_time" content="2018-06-25T06:56:25.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Update Hexo Theme">
 <meta name="twitter:description" content="热门的Hexo主题一般更新很快，我们可以定期将自己感兴趣的或者影响较大的patch合入到自己的主题仓库中，具体步骤如下： Sync a fork按照GitHub帮助文档，将自己的Hexo主题仓库的tracked分支更新到最新。 $ cd themes/indigo$ git remote add upstream https://github.com/yscoder/hexo-theme-indi">
@@ -192,7 +192,7 @@
 <h3 id="Sync-a-fork"><a href="#Sync-a-fork" class="headerlink" title="Sync a fork"></a>Sync a fork</h3><p>按照<a href="https://help.github.com/articles/syncing-a-fork/" target="_blank" rel="noopener">GitHub帮助文档</a>，将自己的<a href="https://github.com/triplekiller/hexo-theme-indigo.git" target="_blank" rel="noopener">Hexo主题仓库</a>的tracked分支更新到最新。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/indigo</span><br><span class="line">$ git remote add upstream https://github.com/yscoder/hexo-theme-indigo.git</span><br><span class="line">$ git fetch upstream card</span><br><span class="line">$ git checkout -t origin/card</span><br><span class="line"><span class="comment"># Use "git merge upstream/card" if do not want to rewrite the history of card</span></span><br><span class="line">$ git rebase upstream/card</span><br><span class="line">$ git push origin card</span><br></pre></td></tr></table></figure>
 <h3 id="Merge-dev-branch"><a href="#Merge-dev-branch" class="headerlink" title="Merge dev branch"></a>Merge dev branch</h3><p>同步完tracked分支后，将tracked分支的改动merge到自己的开发分支上，可以使用git merge/rebase/cherry-pick等方法，一般使用git rebase。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout card-triplekiller</span><br><span class="line">$ git rebase card</span><br><span class="line"><span class="comment"># Resolve conflicts and then run "git rebase --continue"</span></span><br><span class="line">$ git push origin card</span><br><span class="line">$ <span class="built_in">cd</span> ../../</span><br><span class="line"><span class="comment">### Bump up submodule revision</span></span><br><span class="line">$ git add themes/indigo</span><br><span class="line">$ git commit -s -m <span class="string">"indigo: Merge upstream commits"</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout card-triplekiller</span><br><span class="line">$ git rebase card</span><br><span class="line"><span class="comment"># Resolve conflicts and then run "git rebase --continue"</span></span><br><span class="line">$ git push origin card-triplekiller</span><br><span class="line">$ <span class="built_in">cd</span> ../../</span><br><span class="line"><span class="comment"># Bump up submodule revision</span></span><br><span class="line">$ git add themes/indigo</span><br><span class="line">$ git commit -s -m <span class="string">"indigo: Merge upstream commits"</span></span><br><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
 <h3 id="Git-repos-for-Hexo-blog"><a href="#Git-repos-for-Hexo-blog" class="headerlink" title="Git repos for Hexo blog"></a>Git repos for Hexo blog</h3><table>
 <thead>
 <tr>
@@ -223,7 +223,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-06-25T06:29:47.555Z" itemprop="dateUpdated">2018-06-25 14:29:47</time>
+    Last updated: <time datetime="2018-06-25T06:56:25.183Z" itemprop="dateUpdated">2018-06-25 14:56:25</time>
 </span><br>
 
 
