@@ -13,25 +13,25 @@
     
     
     
-    <title>Linux Zombie | EthanX&#39;s Blog</title>
+    <title>Format Tools for C++ | EthanX&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="process">
-    <meta name="description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
-<meta name="keywords" content="process">
+    <meta name="keywords" content="C++">
+    <meta name="description" content="C++ Coding Style不同的编程语言有不同的编码风格，变量函数的命名是用匈牙利命名法(iMyName)还是驼峰命名法(myName)还是帕斯卡命名法(MyName)还是下划线命名法(my_name)，代码注释是用//还是/* */，代码缩进是用空格还是tab键，这些都是代码风格相关的内容。大公司一般都有自己的编码规范，华为有华为的一套，微软有微软的规范，谷歌也有谷歌的风格，小公司一般就实">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux Zombie">
-<meta property="og:url" content="http://bit2tib.com/2017/04/16/linux-zombie/index.html">
+<meta property="og:title" content="Format Tools for C++">
+<meta property="og:url" content="http://bit2tib.com/2018/07/11/format-tools-for-cpp/index.html">
 <meta property="og:site_name" content="EthanX&#39;s Blog">
-<meta property="og:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
+<meta property="og:description" content="C++ Coding Style不同的编程语言有不同的编码风格，变量函数的命名是用匈牙利命名法(iMyName)还是驼峰命名法(myName)还是帕斯卡命名法(MyName)还是下划线命名法(my_name)，代码注释是用//还是/* */，代码缩进是用空格还是tab键，这些都是代码风格相关的内容。大公司一般都有自己的编码规范，华为有华为的一套，微软有微软的规范，谷歌也有谷歌的风格，小公司一般就实">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-07-11T08:05:11.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux Zombie">
-<meta name="twitter:description" content="僵尸进程：defunt/zombie 一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸 在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没">
+<meta name="twitter:title" content="Format Tools for C++">
+<meta name="twitter:description" content="C++ Coding Style不同的编程语言有不同的编码风格，变量函数的命名是用匈牙利命名法(iMyName)还是驼峰命名法(myName)还是帕斯卡命名法(MyName)还是下划线命名法(my_name)，代码注释是用//还是/* */，代码缩进是用空格还是tab键，这些都是代码风格相关的内容。大公司一般都有自己的编码规范，华为有华为的一套，微软有微软的规范，谷歌也有谷歌的风格，小公司一般就实">
     
         <link rel="alternate" type="application/atom+xml" title="EthanX&#39;s Blog" href="/atom.xml">
     
@@ -119,7 +119,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Linux Zombie</div>
+        <div class="flex-col header-title ellipsis">Format Tools for C++</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -141,15 +141,15 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Linux Zombie</h1>
+        <h1 class="title">Format Tools for C++</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-04-16T14:34:59.000Z" itemprop="datePublished" class="page-time">
-  2017-04-16
+                <time datetime="2018-07-11T01:50:06.000Z" itemprop="datePublished" class="page-time">
+  2018-07-11
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
 
             
         </h5>
@@ -166,21 +166,21 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#僵尸进程：defunt-zombie"><span class="post-toc-number">1.</span> <span class="post-toc-text">僵尸进程：defunt/zombie</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#避免僵尸进程"><span class="post-toc-number">2.</span> <span class="post-toc-text">避免僵尸进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#僵尸进程危害"><span class="post-toc-number">3.</span> <span class="post-toc-text">僵尸进程危害</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#C-Coding-Style"><span class="post-toc-number">1.</span> <span class="post-toc-text">C++ Coding Style</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cpplint"><span class="post-toc-number">2.</span> <span class="post-toc-text">cpplint</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#clang-format"><span class="post-toc-number">3.</span> <span class="post-toc-text">clang-format</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Reference"><span class="post-toc-number">4.</span> <span class="post-toc-text">Reference</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-linux-zombie"
+<article id="post-format-tools-for-cpp"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Linux Zombie</h1>
+        <h1 class="post-card-title">Format Tools for C++</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-04-16 22:34:59" datetime="2017-04-16T14:34:59.000Z"  itemprop="datePublished">2017-04-16</time>
+            <time class="post-time" title="2018-07-11 09:50:06" datetime="2018-07-11T01:50:06.000Z"  itemprop="datePublished">2018-07-11</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Coding/">Coding</a></li></ul>
 
 
 
@@ -188,22 +188,16 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="僵尸进程：defunt-zombie"><a href="#僵尸进程：defunt-zombie" class="headerlink" title="僵尸进程：defunt/zombie"></a>僵尸进程：defunt/zombie</h3><ul>
-<li>一个已经终止但是其父进程尚未对其进行善后处理（获取终止子进程的有关信息，释放它仍占用的资源）的进程。子进程死后会发送SIGCHLD信号给父进程，父进程收到此信号后，执行waitpid()函数为子进程收尸</li>
-<li>在fork/execve过程中，假设子进程结束时父进程仍存在，而父进程fork之前既没安装SIGCHLD信号处理函数调用waitpid()等待子进程结束，又没有显式忽略该信号，则子进程成为僵尸进程，无法正常结束，此时即使是root身份kill -9也不能杀死僵尸进程。补救办法是杀死僵尸进程的父进程（僵尸进程的父进程必然存在），僵尸进程成为”孤儿进程”，过继给1号进程init，init始终会负责清理僵尸进程</li>
-<li>系统调用exit，它的作用是使进程退出，但也仅仅限于将一个正常的进程变成一个僵尸进程，并不能将其完全销毁。一个进程在调用exit命令结束自己的生命的时候，其实它并没有真正的被销毁，而是留下一个称为僵尸进程（Zombie）的数据结构</li>
-<li>僵尸进程已经放弃了几乎所有内存空间，没有任何可执行代码，也不能被调度，仅仅在进程列表中保留一个位置，记载该进程的退出状态等信息供其他进程收集</li>
-</ul>
-<h3 id="避免僵尸进程"><a href="#避免僵尸进程" class="headerlink" title="避免僵尸进程"></a>避免僵尸进程</h3><ul>
-<li>调用signal函数忽略SIGCHLD软中断，即signal(SIGCHLD, SIG_IGN)</li>
-<li>调用wait/waitpid接管SIGCHLD信号，等待子进程返回，即while(pid != waitpid(pid, NULL,
-WNOHANG))</li>
-<li>fork两次，子进程先退出，孙子进程就被init接管了，实际上与最初的父进程脱离了关系，就不会僵死了</li>
-</ul>
-<h3 id="僵尸进程危害"><a href="#僵尸进程危害" class="headerlink" title="僵尸进程危害"></a>僵尸进程危害</h3><ul>
-<li>Linux有最大进程数量限制，可用”ulimit -u”查看最大用户进程数，默认为32768(cat /proc/sys/kernel/pid_max)</li>
-<li>产生过多的zombie进程会导致新进程无法生存</li>
-</ul>
+            <h3 id="C-Coding-Style"><a href="#C-Coding-Style" class="headerlink" title="C++ Coding Style"></a>C++ Coding Style</h3><p>不同的编程语言有不同的编码风格，变量函数的命名是用匈牙利命名法(iMyName)还是驼峰命名法(myName)还是帕斯卡命名法(MyName)还是下划线命名法(my_name)，代码注释是用<code>//</code>还是<code>/* */</code>，代码缩进是用空格还是tab键，这些都是代码风格相关的内容。大公司一般都有自己的编码规范，华为有华为的一套，微软有微软的规范，谷歌也有谷歌的风格，小公司一般就实行拿来主义，照搬谷歌微软之类的就行，毕竟规范只是形式，代码本身才是内容。当然，对于开源社区的项目或已有的项目，必须遵循现存的代码风格，比如进行Linux驱动开发就必须遵循Linux内核的代码风格。对于C++的编码风格，建议使用Google C++ style。</p>
+<p>常用的C/C++代码格式化及检测工具有cpplint，clang-format，PC-Lint，astyle等，下面只介绍cpplint和clang-format，因为我就用这两个☺☺☺</p>
+<h3 id="cpplint"><a href="#cpplint" class="headerlink" title="cpplint"></a>cpplint</h3><p>cpplint是Google推出的用来检测C++代码是否符合Google C++ style的工具，是一个Python脚本，只能用来检查，不能自动纠正。可以运行<code>cpplint.py --help</code>查看其用法。</p>
+<p>Ubuntu下安装cpplint.py步骤如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo curl -L &quot;https://raw.githubusercontent.com/google/styleguide/gh-pages/cpplint/cpplint.py&quot; -o /usr/bin/cpplint.py</span><br><span class="line">sudo chmod a+x /usr/bin/cpplint.py</span><br></pre></td></tr></table></figure>
+<h3 id="clang-format"><a href="#clang-format" class="headerlink" title="clang-format"></a>clang-format</h3><p>clang-format是LLVM Clang编译器中自带的工具，用来格式化C/C++/Java/JavaScript/Objective-C/Protobuf等代码。使用Vim/Eclipse/Xcode等IDE工具可以配置集成clang-format，Vim有<a href="https://github.com/rhysd/vim-clang-format" title="vim-clang-format" target="_blank" rel="noopener">vim-clang-format</a>插件，Eclipse有<a href="http://www.cppstyle.com/" title="CppStyle" target="_blank" rel="noopener">CppStyle</a>插件。使用clang-format需要指定具体的coding style，在代码根目录下执行以下命令：</p>
+<p><code>$ clang-format -dump-config -style=Google &gt; .clang-format</code></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">Google C++ Style</a></p>
+<p><a href="https://github.com/google/styleguide/tree/gh-pages/cpplint" target="_blank" rel="noopener">cpplint</a></p>
+<p><a href="http://clang.llvm.org/docs/ClangFormat.html" target="_blank" rel="noopener">clang-format</a></p>
 
         </div>
 
@@ -217,7 +211,7 @@ WNOHANG))</li>
 
 
         
-        <a href="/2017/04/16/linux-zombie/" target="_blank" rel="external">http://bit2tib.com/2017/04/16/linux-zombie/</a>
+        <a href="/2018/07/11/format-tools-for-cpp/" target="_blank" rel="external">http://bit2tib.com/2018/07/11/format-tools-for-cpp/</a>
         
     </div>
     
@@ -238,7 +232,7 @@ WNOHANG))</li>
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/process/">process</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
 
 
             
@@ -248,7 +242,7 @@ WNOHANG))</li>
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&title=《Format Tools for C++》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -258,22 +252,22 @@ WNOHANG))</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&title=《Format Tools for C++》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2018/07/11/format-tools-for-cpp/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — EthanX's Blog&url=http://bit2tib.com/2017/04/16/linux-zombie/&via=http://bit2tib.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Format Tools for C++》 — EthanX's Blog&url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&via=http://bit2tib.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -293,16 +287,16 @@ WNOHANG))</li>
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2018/01/23/start-writing-hexo-blog/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Start Writing Hexo Blog</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/03/02/setup-hls-server-using-nginx/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Setup HLS Server Using Nginx</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -407,7 +401,7 @@ WNOHANG))</li>
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&title=《Format Tools for C++》 — EthanX's Blog&pic=http://bit2tib.com/img/avatar.jpg" data-title=" Weibo">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -417,22 +411,22 @@ WNOHANG))</li>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2017/04/16/linux-zombie/&title=《Linux Zombie》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&title=《Format Tools for C++》 — EthanX's Blog&source=Keep thinking and keep moving" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://bit2tib.com/2018/07/11/format-tools-for-cpp/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux Zombie》 — EthanX's Blog&url=http://bit2tib.com/2017/04/16/linux-zombie/&via=http://bit2tib.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Format Tools for C++》 — EthanX's Blog&url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/&via=http://bit2tib.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2017/04/16/linux-zombie/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://bit2tib.com/2018/07/11/format-tools-for-cpp/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -443,7 +437,7 @@ WNOHANG))</li>
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>Scan to share with WeChat</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aS27bQBAFQN3/0gqQrUDlvZ5xYA5rVgQtiCwt2v17veLz/ns+r9s7n/c//3r1mQ0HAwPjtoz31/P9M/n3JOfqJ0uejoGB8QRGHmRbcP6UJLhf3sfAwMAoE7uVUIuBgYGxzpi9RH6NgYGBsVLEJvikidYyNtfiGBgYN2SsDAZ++vo/zTcwMDB+MWNX8VmncV8L4/odMDAwjmYkxWqeDs5GoW2CGNXiGBgYBzHa1YrZqsTeJbOoCsfAwDiIMUvp8jFnEr7z1HDDfAMDA+OGjNmwME/sZsOAuvTFwMA4mpEHuLaUXRkDtA04DAyMsxl5aywvL2dFb54I1qEWAwPjOMY/0q+gNJ218/JQOxwMYGBg3JyxsvrQjkJXljYuvxkDA+MBjDZ05sF39tPUYRcDA+MBjNky1iy8tstnUdqKgYFxNGO9fd+2+PM1jnrAiYGB8RjG3rHB+hpHPiLFwMA4lfETyV8yVEiC7LAWx8DAOJTRDiCTBDFhzNpzxX8MDAyMIxhtItimkrPVihyMgYHxBEY7PszTuLaIzYPsZaMNAwPjUEabDq6/4vC1YjwGBsZ5jHd52vi2HmqjFQ0MDIyjGbMwt9LW31swY2BgPIeRBNm20F1v+rd4DAyMJzCSBC5v5bfrGnkox8DAwJi9RFKIzgacdWqIgYHxeEa7pJWvZbTB/dU+DAMD4whGGxZ3nXzkuTTlwMDAuDljtuKwK71rW3XbRpgYGBj3YPwBrs4AZdavaxcAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3a0Y7cIAwF0P3/n25fK1WZ3muYSoHD0yraEA4jWWD75ycev/4Yfz/Jx9O7T1/ZPDAwMF7LWP/w50W0gHyzMDAwbmM8RbB2Ke0GJd/6vDYMDAyMJLDmR71/BE0MDAyMrYyV22V7VcbAwMDIL7Gf/z9f+vq3MDAwbmPkQfP///2V+gYGBsarGN8oQOYFgza8Pq4KAwPjaEYe4PLD3Mqcs3cxMDDOZqwEu5XFzUoOj9uEgYFxNKM9xrWJ/vam2ZYzo98EAwPjOEYOW0mc5e0XS5VYDAyMIxhJiTHaieB5G3Dz2TAwMG5gzJq0EvyszSJ5Eu0fBgbGEYxZI1d+rJwl2vKlP/4yGBgYBzFWAmh+0W2Td/XMGBgYRzPyBFm+rHzkoTkqSGBgYFzASNJbeYkxP2gOWytmC8XAwHgto03Hty0Xw1t122yBgYFxJaNts2jnWYmcxWsYGBgvZ+xN4reNFG2yr6jEYmBgHMSYXW7rBoh4g/LLcIHBwMA4gjFLpeWBeBam22QfBgbGPYx8Wbt428qlGBgY1zB2Jchmxcul+TEwMA5lrBzX2nDZXmLzGTAwMM5mrITR9gOzJrBhswUGBsZxjDbItuXJWfa+3iwMDIwLGHka7httE+0ldkN9AwMD4wJGG5pn89enVwwMDIxR2SA/VrbJuw09IxgYGK9izNqz2rdmV9xoKzEwMI5m7Dp35UtJMMllGAMD4wLGb+PKA/FSNUqFAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
